@@ -1,7 +1,32 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
-import { QuestionType } from "../interfaces/question";
+
+
+// eslint-disable-next-line no-redeclare
+enum QuestionType {
+    ShortAnswer = "Short Answer",
+    MultipleChoice = "Multiple Choice",
+}
 
 export function ChangeType(): React.JSX.Element {
-    return <div>Change Type</div>;
+    const [questionType, setQuestionType] = useState<QuestionType>(
+        QuestionType.ShortAnswer,
+    );
+
+    const toggleQuestionType = () => {
+        setQuestionType((prevType) =>
+            prevType === QuestionType.ShortAnswer ?
+                QuestionType.MultipleChoice
+            :   QuestionType.ShortAnswer,
+        );
+    };
+
+    return (
+        <div>
+            {}
+            <div>{questionType}</div>
+            {}
+            <Button onClick={toggleQuestionType}>Change Type</Button>
+        </div>
+    );
 }
