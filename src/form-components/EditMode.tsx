@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-export function EditMode(): React.JSX.Element {
-    const [isEditMode, setIsEditMode] = useState(false);
+export function EditMode() {
+    const [editMode, setEditMode] = useState(false);
     const [name, setName] = useState("Your Name");
     const [isStudent, setIsStudent] = useState(true);
 
@@ -10,39 +10,45 @@ export function EditMode(): React.JSX.Element {
             <h3>Edit Mode</h3>
             <div className="form-check form-switch">
                 <input
-                    type="checkbox"
+                    id="editModeSwitch"
                     className="form-check-input"
-                    checked={isEditMode}
-                    onChange={() => { setIsEditMode(!isEditMode); }}
-                    role="switch"
+                    role="checkbox"
+                    type="checkbox"
+                    checked={editMode}
+                    onChange={() => { setEditMode(!editMode); }}
                 />
-                <label className="form-check-label">Edit Mode</label>
+                <label className="form-check-label" htmlFor="editModeSwitch">
+                    Edit Mode
+                </label>
             </div>
-            {isEditMode ?
+
+            {editMode ?
                 <div>
                     <input
                         type="text"
                         value={name}
                         onChange={(e) => { setName(e.target.value); }}
-                        role="textbox"
+                        aria-label="Name Input"
                     />
                     <div>
                         <input
+                            id="studentStatusCheckbox"
                             type="checkbox"
                             checked={isStudent}
-                            onChange={() => { setIsStudent(!isStudent); }}
                             role="checkbox"
-                            aria-label="student status"
+                            onChange={() => { setIsStudent(!isStudent); }}
                         />
-                        <label>Student</label>
+                        <label htmlFor="studentStatusCheckbox">
+                            Are you a student?
+                        </label>
                     </div>
                 </div>
-            :   <div>
-                    <p>
-                        {name} is {isStudent ? "a student" : "not a student"}
-                    </p>
-                </div>
+            :   <p>
+                    {name} is {isStudent ? "a student" : "not a student"}
+                </p>
             }
         </div>
     );
 }
+
+export default EditMode;
