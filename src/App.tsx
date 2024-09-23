@@ -52,23 +52,18 @@ function App(): React.JSX.Element {
             >
                 Log Hello World
             </Button>
-            <div className="App">
-                <header className="App-header">
-                    UD CISC275 with React Hooks and TypeScript
-                </header>
-                <hr></hr>
-                <Counter />
-                <hr />
-                <RevealAnswer />
-                <hr />
-                <StartAttempt />
-                <hr />
-                <TwoDice />
-                <hr />
-                <ChangeType />
-                <hr />
-                <CycleHoliday />
-            </div>
+            <hr></hr>
+            <Counter />
+            <hr />
+            <RevealAnswer />
+            <hr />
+            <StartAttempt />
+            <hr />
+            <TwoDice />
+            <hr />
+            <ChangeType />
+            <hr />
+            <CycleHoliday />
         </>
     );
 }
