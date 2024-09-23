@@ -43,14 +43,6 @@ function App(): React.JSX.Element {
                             </Row>
                         </Container>
                     </header>
-            <hr></hr>
-            <DoubleHalf></DoubleHalf>
-            <hr></hr>
-            <ChooseTeam></ChooseTeam>
-            <hr></hr>
-            <ColoredBox></ColoredBox>
-            <hr></hr>
-            <ShoveBox></ShoveBox>
                     <p>
                         Edit <code>src/App.tsx</code> and save. This page will
                         automatically reload.
@@ -76,6 +68,15 @@ function App(): React.JSX.Element {
             <ChangeType />
             <hr />
             <CycleHoliday />
+            <hr></hr>
+            <DoubleHalf></DoubleHalf>
+            <hr></hr>
+            <ChooseTeam></ChooseTeam>
+            <hr></hr>
+            <ColoredBox></ColoredBox>
+            <hr></hr>
+            <ShoveBox></ShoveBox>
+
         </>
     );
 }
