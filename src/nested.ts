@@ -23,7 +23,6 @@ export function getNonEmptyQuestions(questions: Question[]): Question[] {
     );
 }
 
-
 /***
  * Consumes an array of questions and returns the question with the given `id`. If the
  * question is not found, return `null` instead.
@@ -35,7 +34,6 @@ export function findQuestion(
     const foundQuestion = questions.find((question) => question.id === id);
     return foundQuestion || null;
 }
-
 
 /**
  * Consumes an array of questions and returns a new array that does not contain the question
@@ -53,7 +51,6 @@ export function getNames(questions: Question[]): string[] {
     return questions.map((question) => question.name);
 }
 
-
 /***
  * Consumes an array of questions and returns the sum total of all their points added together.
  */
@@ -61,14 +58,13 @@ export function sumPoints(questions: Question[]): number {
     return questions.reduce((total, question) => total + question.points, 0);
 }
 
-
 /***
  * Consumes an array of questions and returns the sum total of the PUBLISHED questions.
  */
 export function sumPublishedPoints(questions: Question[]): number {
     return questions
-        .filter((question) => question.published) 
-        .reduce((total, question) => total + question.points, 0); 
+        .filter((question) => question.published)
+        .reduce((total, question) => total + question.points, 0);
 }
 
 /***
@@ -99,7 +95,6 @@ export function toCSV(questions: Question[]): string {
     return [headers, ...rows].join("\n");
 }
 
-
 /**
  * Consumes an array of Questions and produces a corresponding array of
  * Answers. Each Question gets its own Answer, copying over the `id` as the `questionId`,
@@ -125,14 +120,13 @@ export function publishAll(questions: Question[]): Question[] {
     }));
 }
 
-
 /***
  * Consumes an array of Questions and produces whether or not all the questions
  * are the same type. They can be any type, as long as they are all the SAME type.
  */
 export function sameType(questions: Question[]): boolean {
     if (questions.length === 0) {
-        return true; 
+        return true;
     }
 
     const firstType = questions[0].type;
@@ -166,14 +160,10 @@ export function renameQuestionById(
     targetId: number,
     newName: string,
 ): Question[] {
-    return questions.map(
-        (question) =>
-            question.id === targetId ?
-                { ...question, name: newName } 
-            :   question, 
+    return questions.map((question) =>
+        question.id === targetId ? { ...question, name: newName } : question,
     );
 }
-
 
 /***
  * Consumes an array of Questions and produces a new array of Questions, where all
@@ -255,15 +245,15 @@ export function duplicateQuestionInArray(
 
     for (let i = 0; i < questions.length; i++) {
         const question = questions[i];
-        result.push(question); 
+        result.push(question);
         if (question.id === targetId) {
             const duplicatedQuestion: Question = {
-                ...question, 
+                ...question,
                 id: newId,
-                name: `Copy of ${question.name}`, 
+                name: `Copy of ${question.name}`,
             };
-            result.push(duplicatedQuestion); 
+            result.push(duplicatedQuestion);
         }
     }
-    return result; 
+    return result;
 }
