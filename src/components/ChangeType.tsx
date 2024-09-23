@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 
 
-// eslint-disable-next-line no-redeclare
 enum QuestionType {
     ShortAnswer = "Short Answer",
     MultipleChoice = "Multiple Choice",
