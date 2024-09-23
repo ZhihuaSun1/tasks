@@ -27,7 +27,7 @@ function App(): React.JSX.Element {
                     <Row>
                         <Col>
                             UD CISC275 with React Hooks and TypeScript -
-                            ZhihuaSun HHH Hello World
+                            ZhihuaSun1 HHH Hello World
                         </Col>
                         <Col>Second part</Col>
                     </Row>
