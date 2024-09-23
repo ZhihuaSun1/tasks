@@ -19,34 +19,34 @@ function App(): React.JSX.Element {
                         padding: "4px",
                     }}
                 >
-                    MY FIRST HOMEWORK{" "}
+                    MY FIRST HOMEWORK
                 </span>
-                <ol>
-                    <li>get A</li>
-                    <li>Become a Software Engineer</li>
-                    <li>study hard</li>
-                </ol>
-                <img src="public\logo192.png" alt="A picture" />
-                <div className="App">
-                    <header className="App-header">
-                        <Container>
-                            <Row>
-                                <Col>
-                                    UD CISC275 with React Hooks and TypeScript
-                                    ZhihuaSun HHH Hello World
-                                </Col>
-                                <Col>
-                                    Second prat
-                                </Col>
-                            </Row>
-                        </Container>
-                    </header>
-                    <p>
-                        Edit <code>src/App.tsx</code> and save. This page will
-                        automatically reload.
-                    </p>
-                </div>
             </h1>
+            <ol>
+                <li>get A</li>
+                <li>Become a Software Engineer</li>
+                <li>study hard</li>
+            </ol>
+            <img src="/logo192.png" alt="A picture" />
+            <div className="App">
+                <header className="App-header">
+                    <Container>
+                        <Row>
+                            <Col>
+                                UD CISC275 with React Hooks and TypeScript
+                                ZhihuaSun HHH Hello World
+                            </Col>
+                            <Col>
+                                Second part
+                            </Col>
+                        </Row>
+                    </Container>
+                </header>
+                <p>
+                    Edit <code>src/App.tsx</code> and save. This page will
+                    automatically reload.
+                </p>
+            </div>
             <Button
                 onClick={() => {
                     console.log("Hello World!");
@@ -54,18 +54,18 @@ function App(): React.JSX.Element {
             >
                 Log Hello World
             </Button>
-            <hr></hr>
-            <Counter></Counter>
             <hr />
-            <RevealAnswer></RevealAnswer>
+            <Counter />
             <hr />
-            <StartAttempt></StartAttempt>
+            <RevealAnswer />
             <hr />
-            <TwoDice></TwoDice>
+            <StartAttempt />
             <hr />
-            <ChangeType></ChangeType>
+            <TwoDice />
             <hr />
-            <CycleHoliday></CycleHoliday>
+            <ChangeType />
+            <hr />
+            <CycleHoliday />
         </>
     );
 }
