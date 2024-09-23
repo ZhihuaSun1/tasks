@@ -19,10 +19,21 @@ export function TwoDice(): React.JSX.Element {
     const [leftDie, setLeftDie] = useState<number>(initialLeft);
     const [rightDie, setRightDie] = useState<number>(initialRight);
 
-    // eslint-disable-next-line @typescript-eslint/no-confusing-void-expression
-    const rollLeftDie = () => setLeftDie(d6());
-    // eslint-disable-next-line @typescript-eslint/no-confusing-void-expression
-    const rollRightDie = () => setRightDie(d6());
+    const rollLeftDie = () => {
+        let newLeft = d6();
+        if (newLeft === rightDie) {
+            newLeft = d6();
+        }
+        setLeftDie(newLeft);
+    };
+
+    const rollRightDie = () => {
+        let newRight = d6();
+        if (newRight === leftDie) {
+            newRight = d6();
+        }
+        setRightDie(newRight);
+    };
 
     const gameStatus = () => {
         if (leftDie === 1 && rightDie === 1) {
@@ -33,6 +44,7 @@ export function TwoDice(): React.JSX.Element {
             return null;
         }
     };
+
     const statusMessage = gameStatus();
 
     return (
