@@ -18,20 +18,18 @@ export function TwoDice(): React.JSX.Element {
     const { left: initialLeft, right: initialRight } = generateDifferentDice();
     const [leftDie, setLeftDie] = useState<number>(initialLeft);
     const [rightDie, setRightDie] = useState<number>(initialRight);
-
     const rollLeftDie = () => {
-        let newLeft = d6();
-        if (newLeft === rightDie) {
+        let newLeft;
+        do {
             newLeft = d6();
-        }
+        } while (newLeft === rightDie);
         setLeftDie(newLeft);
     };
-
     const rollRightDie = () => {
-        let newRight = d6();
-        if (newRight === leftDie) {
+        let newRight;
+        do {
             newRight = d6();
-        }
+        } while (newRight === leftDie);
         setRightDie(newRight);
     };
 
