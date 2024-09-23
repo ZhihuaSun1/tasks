@@ -5,11 +5,12 @@ export function ChangeColor(): React.JSX.Element {
         "red",
         "blue",
         "green",
-        "yellow",
         "orange",
         "purple",
-        "pink",
         "cyan",
+        "magenta",
+        "white",
+        "black",
     ];
 
     const [selectedColor, setSelectedColor] = useState(colors[0]);
@@ -30,7 +31,18 @@ export function ChangeColor(): React.JSX.Element {
                             checked={selectedColor === color}
                             onChange={() => { setSelectedColor(color); }}
                         />
-                        <label>{color}</label>
+                        <label
+                            style={{
+                                textTransform: "capitalize",
+                                marginLeft: "4px",
+                                backgroundColor: color,
+                                color: color === "white" ? "black" : "white",
+                                padding: "2px 5px",
+                                borderRadius: "4px",
+                            }}
+                        >
+                            {color}
+                        </label>
                     </div>
                 ))}
             </div>
@@ -40,12 +52,12 @@ export function ChangeColor(): React.JSX.Element {
                     marginTop: "20px",
                     padding: "10px",
                     backgroundColor: selectedColor,
-                    color: "white",
+                    color: selectedColor === "white" ? "black" : "white",
                     textAlign: "center",
                     width: "200px",
                 }}
             >
-                {selectedColor}
+                You have chosen {selectedColor}.
             </div>
         </div>
     );
