@@ -5,7 +5,7 @@ export function d6(): number {
     return 1 + Math.floor(Math.random() * 6);
 }
 
-// eslint-disable-next-line no-undef
+
 export function TwoDice(): JSX.Element {
     const [d1, setD1] = useState<number>(1);
     const [d2, setD2] = useState<number>(5);
